@@ -84,3 +84,38 @@ To use the HTML Parser, follow these steps:
 
 The parser will read the HTML files from the specified directory, extract titles and contents, and save the data as JSON in the specified output file.
  ```
+## TFidf_generator
+The TF-IDF Score Generator is a Python script that calculates TF-IDF (Term Frequency-Inverse Document Frequency) scores for paragraphs extracted from text data. TF-IDF is a numerical statistic used to reflect the importance of a term in a collection of documents.
+
+1. Navigate to the project directory:
+    ```bash
+    cd tfidf_score_generator
+    ```
+
+2. (Optional) Create and activate a virtual environment:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. Install dependencies:
+    ```bash
+    pip install scikit-learn pandas
+    ```
+
+## Usage
+To use the TF-IDF Score Generator, follow these steps:
+
+1. Prepare your data:
+   - Ensure your data is in JSON format with paragraphs stored in a field (e.g., `"paragraphs"`).
+   - Update the `data_file` variable in the script to point to your JSON file.
+
+2. Run the script:
+    ```bash
+    python tfidf_score_generator.py
+    ```
+
+3. Output files:
+   - The script will generate two serialized files:
+     - `tfidf.pkl`: Contains the serialized TF-IDF vectorizer and matrix.
+     - `cosine_similarity.pkl`: Contains the serialized cosine similarities matrix.
